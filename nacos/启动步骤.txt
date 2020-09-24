@@ -3,10 +3,23 @@ nacos-server.jar 放到 target文件夹里面去(若没有，则新建在当前�
 
 1、 cd  nacos/bin
 
+###  linux 启动
+
 2、 sh startup.sh -m standalone
+
+###  windows 启动
+
+2、 .\startup.sh -m standalone
 
 
 ++++++++++
-停止步骤:
 
- sh shutdown.sh
+###  linux 停止步骤
+
+3、 sh shutdown.sh
+
+###  windows 停止步骤
+
+3、 .\shutdown.cmd
+
+
