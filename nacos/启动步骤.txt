@@ -1,3 +1,4 @@
+从 http://qiniu.lancaiwu.com/nacos-server.jar  下载  nacos-server.jar
 nacos-server.jar 放到 target文件夹里面去(若没有，则新建在当前目录 \nacos\target)
 
 1、 cd  nacos/bin
