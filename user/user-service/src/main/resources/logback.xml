@@ -4,7 +4,7 @@
                scanPeriod="30 seconds"><!-- 'milliseconds','seconds','minutes' and 'hours' -->
 
     <property name="log.base" value="./logs/"/><!--日志路径-->
-    <property name="log.name" value="goods"/>
+    <property name="log.name" value="user"/>
     <Property name="patternTemplate"
               value="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger - %msg%n"/>
 

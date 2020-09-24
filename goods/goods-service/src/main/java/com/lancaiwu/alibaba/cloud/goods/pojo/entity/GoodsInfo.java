@@ -8,9 +8,9 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
-@TableName("goods")
+@TableName("t_goods_info")
 @Data
-public class GoodsEntity implements Serializable {
+public class GoodsInfo implements Serializable {
     @TableId(type = IdType.ASSIGN_ID)
     private Long id;
     private String name;

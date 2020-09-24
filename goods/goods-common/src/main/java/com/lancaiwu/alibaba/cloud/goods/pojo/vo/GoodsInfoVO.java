@@ -2,7 +2,7 @@ package com.lancaiwu.alibaba.cloud.goods.pojo.vo;
 
 import java.util.Date;
 
-public class GoodsVO {
+public class GoodsInfoVO {
     private Long id;
     private String name;
     private String skuCode;

@@ -1,4 +1,4 @@
-package com.lancaiwu.userservice;
+package com.lancaiwu.alibaba.cloud.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

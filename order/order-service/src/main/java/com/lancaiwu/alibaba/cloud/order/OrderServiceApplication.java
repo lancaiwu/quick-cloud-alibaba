@@ -1,13 +1,16 @@
-package com.lancaiwu.userservice;
+package com.lancaiwu.alibaba.cloud.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author lancaiwu
+ */
 @SpringBootApplication
-public class UserServiceApplication {
+public class OrderServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserServiceApplication.class, args);
+        SpringApplication.run(OrderServiceApplication.class, args);
     }
 
 }

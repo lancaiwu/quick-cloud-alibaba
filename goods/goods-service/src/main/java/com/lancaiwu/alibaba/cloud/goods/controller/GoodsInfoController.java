@@ -1,9 +1,9 @@
 package com.lancaiwu.alibaba.cloud.goods.controller;
 
-import com.lancaiwu.alibaba.cloud.goods.pojo.entity.GoodsEntity;
-import com.lancaiwu.alibaba.cloud.goods.service.GoodsService;
+import com.lancaiwu.alibaba.cloud.goods.pojo.entity.GoodsInfo;
+import com.lancaiwu.alibaba.cloud.goods.service.GoodsInfoService;
 import com.lancaiwu.alibaba.cloud.pojo.vo.APIResponse;
-import com.lancaiwu.alibaba.cloud.goods.pojo.vo.GoodsVO;
+import com.lancaiwu.alibaba.cloud.goods.pojo.vo.GoodsInfoVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -16,24 +16,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 商品
+ * @author lancaiwu
  */
 @Api(tags = "商品")
 @RestController
 @RequestMapping("goods")
-public class GoodsController {
+public class GoodsInfoController {
 
     @Autowired
-    private GoodsService goodsService;
+    private GoodsInfoService goodsInfoService;
 
     @ApiOperation("根据商品id查询商品信息")
     @GetMapping("/getGoodsById")
-    public APIResponse<GoodsVO> getGoodsById(@ApiParam("商品id") @RequestParam("id") Long id){
-        GoodsEntity goodsEntity=goodsService.getGoodsById(id);
-        GoodsVO goodsVO=new GoodsVO();
-        if(goodsEntity!=null){
-            BeanUtils.copyProperties(goodsEntity,goodsVO);
+    public APIResponse<GoodsInfoVO> getGoodsById(@ApiParam("商品id") @RequestParam("id") Long id){
+        GoodsInfo goodsInfo = goodsInfoService.getGoodsById(id);
+        GoodsInfoVO goodsInfoVO =new GoodsInfoVO();
+        if(goodsInfo !=null){
+            BeanUtils.copyProperties(goodsInfo, goodsInfoVO);
         }
-        return APIResponse.data(goodsVO);
+        return APIResponse.data(goodsInfoVO);
     }
 
 }

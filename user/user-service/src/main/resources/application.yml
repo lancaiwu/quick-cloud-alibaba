@@ -1,8 +1,8 @@
 server:
-  port: 9000
+  port: 9002
 spring:
   application:
-    name: goods-service
+    name: order-service
   cloud:
     nacos:
       discovery:
@@ -11,7 +11,7 @@ spring:
     name: druidDataSource
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/alibaba_cloud_goods?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/alibaba_cloud_user?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
     druid:

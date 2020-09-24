@@ -1,4 +1,4 @@
-package com.lancaiwu.orderservice;
+package com.lancaiwu.alibaba.cloud.order;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
