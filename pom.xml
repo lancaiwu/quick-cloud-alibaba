@@ -23,10 +23,10 @@
     </properties>
 
     <modules>
+        <module>base</module>
         <module>goods</module>
         <module>order</module>
         <module>user</module>
-        <module>base</module>
     </modules>
 
     <dependencyManagement>
