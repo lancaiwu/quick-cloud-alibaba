@@ -1,6 +1,5 @@
 package com.lancaiwu.alibaba.cloud.order.controller;
 
-import com.baomidou.mybatisplus.extension.api.R;
 import com.lancaiwu.alibaba.cloud.goods.bean.vo.OrderInfoVO;
 import com.lancaiwu.alibaba.cloud.goods.pojo.vo.GoodsInfoVO;
 import com.lancaiwu.alibaba.cloud.order.feign.GoodsFeign;
@@ -13,7 +12,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,10 +38,10 @@ public class OrderInfoController {
 
     @ApiOperation("根据订单id查询订单信息")
     @GetMapping("getOrderById")
-    public R<OrderInfoVO> getOrderById(Long id) {
+    public ApiResponse<OrderInfoVO> getOrderById(Long id) {
         OrderInfo orderInfo = orderInfoService.getById(id);
         if (orderInfo == null) {
-            return R.failed("不存在该订单");
+            return ApiResponse.fail("不存在该订单");
         }
 
         OrderInfoVO orderInfoVO = new OrderInfoVO();
@@ -59,7 +57,7 @@ public class OrderInfoController {
             orderInfoVO.setUserInfoVO(userInfoApiResponse.getData());
         }
 
-        return R.ok(orderInfoVO);
+        return ApiResponse.data(orderInfoVO);
     }
 
 }

@@ -38,6 +38,13 @@ public class ApiResponse<T> implements Serializable {
         this.success = true;
     }
 
+    private ApiResponse(int code, String message, boolean success) {
+        this.code = code;
+        this.message = message;
+        this.timestamp = new Date();
+        this.success = success;
+    }
+
     /**
      * 成功
      *
@@ -68,11 +75,11 @@ public class ApiResponse<T> implements Serializable {
      * @return
      */
     public static <T> ApiResponse<T> exception(APIResponseEnums.APIResponseEnum apiResponseEnum) {
-        return new ApiResponse<T>(apiResponseEnum.getCode(), apiResponseEnum.getDesc());
+        return new ApiResponse<T>(apiResponseEnum.getCode(), apiResponseEnum.getDesc(), false);
     }
 
     public static <T> ApiResponse<T> exception(int code, String message) {
-        return new ApiResponse<T>(code, message);
+        return new ApiResponse<T>(code, message, false);
     }
 
     public int getCode() {
