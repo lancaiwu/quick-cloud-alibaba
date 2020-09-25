@@ -2,3 +2,5 @@
 target
 .idea
 /.idea/
+sentinel-dashboard.jar
+nacos-server.jar
