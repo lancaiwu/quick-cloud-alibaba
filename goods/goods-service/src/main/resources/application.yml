@@ -11,6 +11,11 @@ spring:
       transport:
         port: 9004  # spring.cloud.sentinel.transport.port 端口配置会在应用对应的机器上启动一个 Http Server，该 Server 会与 Sentinel 控制台做交
         dashboard: 127.0.0.1:9003
+  zipkin:
+    base-url: http://127.0.0.1:9009  #zipkin服务端的地址
+  sleuth:
+    sampler:
+    probability: 1.0 #采样比例，设置为1.0时代表全部强求都需要采样
   datasource:
     name: druidDataSource
     type: com.alibaba.druid.pool.DruidDataSource

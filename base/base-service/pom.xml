@@ -77,6 +77,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- 包含了sleuth zipkin 数据链路追踪-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>

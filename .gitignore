@@ -4,3 +4,4 @@ target
 /.idea/
 sentinel-dashboard.jar
 nacos-server.jar
+zipkin-server.jar

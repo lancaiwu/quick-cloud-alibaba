@@ -12,6 +12,11 @@ spring:
 #      transport:
 #        port: 9004
 #        dashboard: localhost:9003
+    zipkin:
+      base-url: http://127.0.0.1:9009  #zipkin服务端的地址
+    sleuth:
+      sampler:
+      probability: 1.0 #采样比例，设置为1.0时代表全部强求都需要采样
     gateway:
       discovery:
         locator:
