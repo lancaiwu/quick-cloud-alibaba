@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration>
-<configuration debug="true" scan="false"
+<configuration debug="true"
                scanPeriod="30 seconds"><!-- 'milliseconds','seconds','minutes' and 'hours' -->
 
     <property name="log.base" value="./logs/"/><!--日志路径-->

@@ -7,8 +7,10 @@ import java.util.Date;
 
 /**
  * 接口返回结果VO
+ *
+ * @author lancaiwu
  */
-public class APIResponse<T> implements Serializable {
+public class ApiResponse<T> implements Serializable {
     private int code;
     private String message;
     private boolean success;
@@ -18,7 +20,10 @@ public class APIResponse<T> implements Serializable {
      */
     private T data;
 
-    private APIResponse(T data) {
+    public ApiResponse() {
+    }
+
+    private ApiResponse(T data) {
         this.data = data;
         this.code = APIResponseEnums.APIResponseEnum.SUCCESS.getCode();
         this.message = APIResponseEnums.APIResponseEnum.SUCCESS.getDesc();
@@ -26,7 +31,7 @@ public class APIResponse<T> implements Serializable {
         this.success = true;
     }
 
-    private APIResponse(int code, String message) {
+    private ApiResponse(int code, String message) {
         this.code = code;
         this.message = message;
         this.timestamp = new Date();
@@ -40,8 +45,8 @@ public class APIResponse<T> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> APIResponse<T> data(T data) {
-        return new APIResponse<T>(data);
+    public static <T> ApiResponse<T> data(T data) {
+        return new ApiResponse<T>(data);
     }
 
     /**
@@ -51,8 +56,8 @@ public class APIResponse<T> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> APIResponse<T> fail(String message) {
-        return new APIResponse<T>(APIResponseEnums.APIResponseEnum.FAIL.getCode(), APIResponseEnums.APIResponseEnum.FAIL.getDesc());
+    public static <T> ApiResponse<T> fail(String message) {
+        return new ApiResponse<T>(APIResponseEnums.APIResponseEnum.FAIL.getCode(), APIResponseEnums.APIResponseEnum.FAIL.getDesc());
     }
 
     /**
@@ -62,12 +67,12 @@ public class APIResponse<T> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> APIResponse<T> exception(APIResponseEnums.APIResponseEnum apiResponseEnum) {
-        return new APIResponse<T>(apiResponseEnum.getCode(), apiResponseEnum.getDesc());
+    public static <T> ApiResponse<T> exception(APIResponseEnums.APIResponseEnum apiResponseEnum) {
+        return new ApiResponse<T>(apiResponseEnum.getCode(), apiResponseEnum.getDesc());
     }
 
-    public static <T> APIResponse<T> exception(int code, String message) {
-        return new APIResponse<T>(code, message);
+    public static <T> ApiResponse<T> exception(int code, String message) {
+        return new ApiResponse<T>(code, message);
     }
 
     public int getCode() {

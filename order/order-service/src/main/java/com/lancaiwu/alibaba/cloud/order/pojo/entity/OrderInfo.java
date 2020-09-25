@@ -9,6 +9,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
+ * 订单
+ *
  * @author lancaiwu
  * @since 2020/9/24 16:17
  */
@@ -17,7 +19,22 @@ import java.util.Date;
 public class OrderInfo implements Serializable {
     @TableId(type = IdType.ASSIGN_ID)
     private Long id;
+    /**
+     * 订单号
+     */
     private String orderId;
+    /**
+     * 商品id
+     */
+    private Long goodsId;
+    /**
+     * 商品件数
+     */
+    private Integer goodsNum;
+    /**
+     * 下单用户
+     */
+    private Long userId;
     /**
      * 有效 1  无效 0
      */

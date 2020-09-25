@@ -1,16 +1,18 @@
-package com.lancaiwu.alibaba.cloud.goods.pojo.vo;
+package com.lancaiwu.alibaba.cloud.user.bean.vo;
 
 import java.util.Date;
 
 /**
- * 商品VO
+ * 用户
  *
  * @author lancaiwu
+ * @since 2020/9/25 11:41
  */
-public class GoodsInfoVO {
+public class UserInfoVO {
     private Long id;
-    private String name;
-    private String skuCode;
+    private String username;
+    private String mobile;
+    private String nick;
     private Integer status;
     /**
      * 有效 1  无效 0
@@ -29,20 +31,28 @@ public class GoodsInfoVO {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getSkuCode() {
-        return skuCode;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setSkuCode(String skuCode) {
-        this.skuCode = skuCode;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getNick() {
+        return nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
     }
 
     public Integer getStatus() {
@@ -91,5 +101,21 @@ public class GoodsInfoVO {
 
     public void setUpdateUser(Long updateUser) {
         this.updateUser = updateUser;
+    }
+
+    @Override
+    public String toString() {
+        return "UserInfoVO{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", nick='" + nick + '\'' +
+                ", status=" + status +
+                ", valid=" + valid +
+                ", createTime=" + createTime +
+                ", createUser=" + createUser +
+                ", updateTime=" + updateTime +
+                ", updateUser=" + updateUser +
+                '}';
     }
 }
