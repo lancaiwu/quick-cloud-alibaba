@@ -1,0 +1,27 @@
+server:
+  port: 9010
+spring:
+  application:
+    name: admin-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  security:
+    user:
+      name: root
+      password: 123456
+  boot:
+    admin:
+      discovery:
+        ignored-services: ${spring.application.name}
+logging:
+  config: classpath:logback.xml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

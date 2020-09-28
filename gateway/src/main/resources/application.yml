@@ -3,6 +3,12 @@ server:
 spring:
   application:
     name: gateway
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:9010
+        username: root
+        password: 123456
   cloud:
     nacos:
       discovery:
@@ -47,3 +53,8 @@ spring:
             - Path=/goods-service/**
 logging:
   config: classpath:logback.xml
+ribbon:
+  # 开启手动注入，否则会导致第一次调用会失败
+  eager-load:
+    enabled: true
+    clients: order-server,user-server,goods-server

@@ -23,6 +23,7 @@
     </properties>
 
     <modules>
+        <module>admin</module>
         <module>base</module>
         <module>goods</module>
         <module>user</module>
