@@ -21,6 +21,7 @@ public class UserInfo {
     private String username;
     private String mobile;
     private String nick;
+    private String password;
     private Integer status;
     /**
      * 有效 1  无效 0

@@ -1,0 +1,56 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: security-server
+  datasource:
+    name: druidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/alibaba_cloud_security?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    druid:
+      filters: stat,wall,log4j,config
+      max-active: 100
+      initial-size: 5  # 初始化大小
+      max-wait: 60000 # 最大
+      min-idle: 1 # 最小
+      time-between-eviction-runs-millis: 60000 # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      min-evictable-idle-time-millis: 300000   # 指定一个空闲连接最少空闲多久后可被清除，单位是毫秒
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 50
+      max-pool-prepared-statement-per-connection-size: 20
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico
+        session-stat-enable: true
+        session-stat-max-count: 10
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: admin
+        login-password: admin
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  config: classpath:logback.xml
+jwt:
+  #http请求中用于传输token的头名称
+  token-header: Authorization
+  # token前缀
+  token-prefix: Bearer
+  # token秘钥
+  token-secret: 'TvtLMQiU4#HgWCYF%WpUjlpaH0Wl0m1C'
+  # 24小时过期
+  token-expiration: 86400000
+security:
+  password:
+    secret: 'GS4ROC71*hBguAGKvyk&1Gl^%ZizNKDYtCElYVQ!B7Q$GomBzwO8$Bz!mRm!f$&&'
