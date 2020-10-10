@@ -1,0 +1,39 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: oauth2-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:9010
+        username: root
+        password: 123456
+  redis:
+    host: 127.0.0.1
+    password:
+    port: 6379
+    timeout: 3000
+    lettuce:
+      pool:
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+        min-idle: 0
+#  freemarker:
+#    template-loader-path: classpath:/templates
+
+logging:
+  config: classpath:logback.xml
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  endpoint:
+#    health:
+#      show-details: always
